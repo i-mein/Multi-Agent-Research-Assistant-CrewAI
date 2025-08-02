@@ -1,0 +1,27 @@
+[project]
+name = "researchagent_ollama_gemma3"
+version = "0.1.0"
+description = "researchagent_ollama_gemma3 using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.120.1,<1.0.0", 
+    "agentops>=0.3.21",
+    "ollama>=0.4.4",
+    "pymarkdownlnt>=0.9.26",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+researchagent_ollama_gemma3 = "researchagent_ollama_gemma3.main:run"
+run_crew = "researchagent_ollama_gemma3.main:run"
+train = "researchagent_ollama_gemma3.main:train"
+replay = "researchagent_ollama_gemma3.main:replay"
+test = "researchagent_ollama_gemma3.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
